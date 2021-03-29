@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
-//import Directory from './DirectoryComponent'
 import Home from "./HomeComponent";
+import Integrations from "./IntegrationsComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
