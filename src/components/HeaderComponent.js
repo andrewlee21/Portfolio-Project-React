@@ -52,6 +52,13 @@ class Header extends Component {
   }
 
   render() {
+
+const headerImage = {
+  height: "50px",
+  weight: "120px"
+}
+
+
     return (
       <React.Fragment>
         <Jumbotron fluid>
@@ -60,9 +67,9 @@ class Header extends Component {
               <NavbarBrand className="mr-auto" href="/">
                 <img
                   src="img/logo.png"
-                  height="30"
-                  width="30"
                   alt="logo placeholder"
+                   style={headerImage}
+        
                 />
               </NavbarBrand>
               <NavbarToggler onClick={this.toggleNav} />
@@ -90,7 +97,11 @@ class Header extends Component {
                   </NavItem>
                 </Nav>
                 <span className="navbar-text ml-auto">
-                  <Button outline onClick={this.toggleModal}>
+                  <Button
+                    style={{ width: 100 }}
+                    className="btn-dark mt-4"
+                    onClick={this.toggleModal}
+                  >
                     Login
                   </Button>
                 </span>
@@ -98,7 +109,7 @@ class Header extends Component {
             </div>
           </Navbar>
         </Jumbotron>
-        
+
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
           <ModalBody>

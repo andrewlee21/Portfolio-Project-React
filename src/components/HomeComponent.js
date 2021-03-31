@@ -36,7 +36,7 @@ function Home(props) {
             systems.
           </h5>
           <Link to="/solutions">
-            <Button className="btn-dark mt-4 text-left wideButton">
+            <Button style={{width: 160}} className="btn-dark mt-4  wideButton">
               Learn More
             </Button>
           </Link>
