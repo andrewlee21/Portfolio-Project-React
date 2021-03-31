@@ -40,7 +40,7 @@
 .jumbotron {
   padding:12px;
   background-image: linear-gradient(to right, #20acac5d, #c4ffff, #20acac5d);
-  color: rgb(0, 0, 0);
+  color:black;
   margin: 0;
  
   
@@ -78,6 +78,18 @@ Nav
   font-weight: 600;
   
 }
+
+
+
+
+.nav-text {
+  color: black;
+  font-weight: 600;
+  position: relative;
+ top: 50%;
+ transform: translateY(-50%);
+}
+
 
 .nav-tabs .nav-link{
   background-color: #20acac5d;
@@ -118,8 +130,9 @@ Middle Section
 .rcorners1 {
   border-radius: 25px;
 }
-#widebutton {
-  width: 130px;
+.widebutton {
+  width: 160px;
+  align-self: left;
 }
 
 /****************************

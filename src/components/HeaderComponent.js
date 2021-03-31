@@ -16,7 +16,8 @@ import {
   Input,
   Label,
 } from "reactstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import "../App.css";
 
 class Header extends Component {
   constructor(props) {
@@ -68,68 +69,36 @@ class Header extends Component {
               <Collapse isOpen={this.state.isNavOpen} navbar>
                 <Nav navbar>
                   <NavItem>
-                    <NavLink className="nav-link" to="/home">
-                      <i className="fa fa-home fa-lg" /> Home
+                    <NavLink className="nav-text" to="/home">
+                      Home
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink className="nav-link" to="/directory">
-                      <i className="fa fa-list fa-lg" /> Directory
+                      Directory
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink className="nav-link" to="/aboutus">
-                      <i className="fa fa-info fa-lg" /> About
+                      About
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink className="nav-link" to="/contactus">
-                      <i className="fa fa-address-card fa-lg" /> Contact Us
+                      Contact Us
                     </NavLink>
                   </NavItem>
                 </Nav>
                 <span className="navbar-text ml-auto">
                   <Button outline onClick={this.toggleModal}>
-                    <i className=" fa fa-sign-in fa-lg" /> Login
+                    Login
                   </Button>
                 </span>
               </Collapse>
             </div>
           </Navbar>
         </Jumbotron>
-        <div className="container">
-            <div class="row m-1 m-sm-1 m-md-2 m-lg-3">
-              <div className="col-sm-5 p-md-3 p-lg-5">
-                <h2>
-                  <strong>Don't grow in the dark.</strong>
-                </h2>
-                <h5>
-                  The solution for optimizing data management across cannabis
-                  business processes.
-                </h5>
-                <h5>
-                  Integrate all your data and get the most out of your
-                  traceability systems.
-                </h5>
-                <a
-                  id="wideButton"
-                  class="btn btn-dark mt-4 ml-2"
-                  href="#solutions"
-                >
-                  Learn More
-                </a>
-              </div>
-              <div class="col-sm-7 pt-2 text-center">
-                <img
-                  class="img-fluid"
-                  width="60%"
-                  height="60%"
-                  src="/img/data-integrations(3)-white.jpg"
-                  alt="placeholder"
-                />
-              </div>
-          </div>
-        </div>
+        
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
           <ModalBody>

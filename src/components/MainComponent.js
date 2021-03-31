@@ -3,6 +3,7 @@ import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
 import Integrations from "./IntegrationsComponent";
+import Solutions from "./SolutionsComponent";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -20,9 +21,12 @@ class Main extends Component {
     return (
       <div>
         <Header />
+        <Home />
+        <Solutions />
+        <Integrations />
         <Switch>
-          {/* <Route path="/home" component={Home} />
-          <Route
+          <Route path="/solutions" component={Solutions} />
+          {/* <Route
             exact
             path="/directory"
             render={() => <Directory campsites={this.props.campsites} />}
