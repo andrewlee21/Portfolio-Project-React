@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import {
   TabContent,
@@ -13,125 +11,82 @@ import {
   CardText,
   Row,
   Col,
-  Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
 } from "reactstrap";
 import classnames from "classnames";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserCog,
   faChartBar,
   faFileInvoice,
 } from "@fortawesome/free-solid-svg-icons";
-
 import { Link } from "react-router-dom";
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-
-const items = [
-  {
-    id: 1,
-    altText: "Slide 1",
-    caption: "Slide 1",
-    src: "img/clientlogos/Subx-Logo-Hi-Res.png",
-  },
-  {
-    id: 2,
-    altText: "Slide 2",
-    caption: "Slide 2",
-    src: "img/clientlogos/Subx-Logo-Hi-Res.png",
-  },
-  {
-    id: 3,
-    altText: "Slide 3",
-    caption: "Slide 3",
-    src: "img/clientlogos/Subx-Logo-Hi-Res.png",
-  },
-];
+import SUBXimage from "../images/clientlogos/Subx-Logo-Hi-Res.png";
+import ECCimage from "../images/clientlogos/emerald-city-cultivation-logo.png";
 
 const ClientCarousel = (props) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [animating, setAnimating] = useState(false);
-
-  const next = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(nextIndex);
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 4, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
   };
-
-  const previous = () => {
-    if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
-    setActiveIndex(nextIndex);
-  };
-
-  const goToIndex = (newIndex) => {
-    if (animating) return;
-    setActiveIndex(newIndex);
-  };
-
-  const slides = items.map((item) => {
-    return (
-      <CarouselItem
-        className="custom-tag"
-        tag="div"
-        key={item.id}
-        onExiting={() => setAnimating(true)}
-        onExited={() => setAnimating(false)}
-      >
-        <img src={item.src} alt={item.altText} />
-        <img src={item.src} alt={item.altText} />
-      </CarouselItem>
-    );
-  });
-
+  
   return (
-    <div>
-      <style>
-        {`.custom-tag {
-              max-width: 100%;
-              height: 500px;
-              background: black;
-            }`}
-      </style>
-      <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-        <CarouselIndicators
-          items={items}
-          activeIndex={activeIndex}
-          onClickHandler={goToIndex}
+    <Carousel responsive={responsive} >
+      <div>
+        <img
+          className="img-fluid center-block imageStyle1"
+          src="img/clientlogos/emerald-city-cultivation-logo.png"
         />
-        {slides}
-        <CarouselControl
-          direction="prev"
-          directionText="Previous"
-          onClickHandler={previous}
+      </div>
+      <div>
+        <img
+          className="img-fluid center-block imageStyle1 "
+          src="img/clientlogos/Subx-Logo-Hi-Res.png"
         />
-        <CarouselControl
-          direction="next"
-          directionText="Next"
-          onClickHandler={next}
+      </div>
+      <div>
+        <img
+          className="img-fluid imageStyle1"
+          src="img/clientlogos/gabriel_white-min.png"
         />
-      </Carousel>
-    </div>
+      </div>
+      <div>
+        <img
+          className=" img-fluid imageStyle1"
+          style={{ width: 100 }}
+          src="img/clientlogos/double-delicous-logo.png"
+        />
+      </div>
+    </Carousel>
   );
 };
 
-
-
-
-
-
 function Home(props) {
+  const [activeTab, setActiveTab] = useState("1");
 
-      const [activeTab, setActiveTab] = useState("1");
-
-      const toggle = (tab) => {
-        if (activeTab !== tab) setActiveTab(tab);
-      };
+  const toggle = (tab) => {
+    if (activeTab !== tab) setActiveTab(tab);
+  };
 
   return (
     <React.Fragment>
@@ -383,6 +338,5 @@ function Home(props) {
     </React.Fragment>
   );
 }
-
 
 export default Home;
